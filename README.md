@@ -1,3 +1,4 @@
+![alt text](https://ibb.co/T06VkFm)
 # Krypton
 
 Welcome to Krypton, A free open source encrypting software.
