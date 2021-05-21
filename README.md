@@ -1,4 +1,3 @@
-![Screenshot](/logo/MOSHED-2021-5-21-10-51-21_(1).jpg)
 # Krypton
 
 Welcome to Krypton, A free open source encrypting software.
