@@ -6,7 +6,7 @@ Welcome to Krypton, A free open source encrypting software.
 
 Krypton is a free and open source symmetrical encryption program.
 
-Usually encryption is hard to understand for some begginers when approaching this topic. UwUcrypt is here to Help. 
+Usually encryption is hard to understand for some begginers when approaching this topic. Krypton is here to Help. 
 Krypton is easy, short, and understandable for most begginer software developers. 
 
 Krypton is still being programmed as of 05/21/2021 and will have various releases of it soon.
@@ -33,7 +33,7 @@ To run Krypton navigate to its folder. Once inside the Krypton directory navigat
 
 Q: What can Krypton encrypt?
 
-A: UwUcrypt can only encrypt ASCII encoded characters. Anything else wont work.
+A: Krypton can only encrypt ASCII encoded characters. Anything else wont work.
 
 
 Q: What is symmetrical encryption?
