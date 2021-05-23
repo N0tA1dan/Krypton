@@ -53,6 +53,12 @@ If you need any kind of support of Krypton please refer to my contact list below
 
 Email: notaidan420@gmail.com
 
+# Website
+
+If you would like to check out the Krypton website it will be below
+
+https://n0ta1dan.github.io/Krypton/
+
 # Extras
 
 If you would like to support my community please join my discord below.
