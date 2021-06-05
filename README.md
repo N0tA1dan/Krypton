@@ -55,7 +55,7 @@ If you need any kind of support of Krypton please refer to my contact list below
 
 Email: notaidan420@gmail.com
 
-### Support me
+# Support me
 
 If you would like to support me you can [buy me a coffee.](https://www.buymeacoffee.com/notaidan)
 
