@@ -71,5 +71,5 @@ https://n0ta1dan.github.io/Krypton/
 
 If you would like to support my community please join my discord below.
 
-Discord: https://discord.gg/2AY6PDUFUN
+[![Discord Chat](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/2AY6PDUFUN)
 
