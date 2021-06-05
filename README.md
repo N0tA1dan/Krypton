@@ -3,7 +3,7 @@
 
 Welcome to Krypton, A free open source encrypting software.
 
-# Description
+### Description
 
 Krypton is a free and open source symmetrical encryption program.
 
@@ -14,7 +14,7 @@ Krypton can generate a key from 40-43 bytes and is virtually stronger than aes-2
 
 Krypton is still being programmed as of 05/21/2021 and will have various releases of it soon.
 
-# Windows Installation 
+### Windows Installation 
 
 To install Krypton on windows simply download the code as a zip file. Then unzip the file and you should get a directory called Krypton.
 
@@ -22,7 +22,7 @@ To run Krypton on windows make sure to install the latest version of java. Once 
 
 > java krypton.java
 
-# Linux Installation
+### Linux Installation
 
 To install Krypton on linux use the command below in a terminal.
 
@@ -32,7 +32,7 @@ To run Krypton navigate to its folder. Once inside the Krypton directory navigat
 
 > java krypton.java
 
-# Q&A
+### Q&A
 
 Q: What can Krypton encrypt?
 
@@ -49,25 +49,25 @@ Q: Where can I learn about encryption?
 A: You can learn off of many various websites such as YouTube and Google.
 
 
-# Contact Us
+### Contact Us
 
 [![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/KryptonEncrypt) [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](https://mail.google.com/mail/u/0/?fs=1&to=notaidan420@gmail.com&tf=cm)
 
 
-# Support Us 
+### Support Us 
 
 If you would like to support me you can [buy me a coffee.](https://www.buymeacoffee.com/notaidan)
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/notaidan)
 
 
-# Website
+### Website
 
 If you would like to check out the Krypton website it will be below
 
 https://n0ta1dan.github.io/Krypton/
 
-# Extras
+### Extras
 
 If you would like to support my community please join my discord below.
 
