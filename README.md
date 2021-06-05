@@ -55,9 +55,12 @@ If you need any kind of support of Krypton please refer to my contact list below
 
 Email: notaidan420@gmail.com
 
-# Support Us
+### Support me
 
-If you would like to support the Krypton project go ahead and star the repository or contribute to it. Anything works!!!
+If you would like to support me you can [buy me a coffee.](https://www.buymeacoffee.com/notaidan)
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/notaidan)
+
 
 # Website
 
