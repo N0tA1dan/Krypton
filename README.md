@@ -55,6 +55,10 @@ If you need any kind of support of Krypton please refer to my contact list below
 
 Email: notaidan420@gmail.com
 
+# Support Us
+
+If you would like to support the Krypton project go ahead and star the repository or contribute to it. Anything works!!!
+
 # Website
 
 If you would like to check out the Krypton website it will be below
