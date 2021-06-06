@@ -38,7 +38,6 @@ public class krypton {
             String ascii_5 = ascii_4.replace(",", "");
 
             // Numbers to use in the key process and the encryption process
-            BigInteger very_large_number = new BigInteger("123456789123456789123456789123456789");
             BigInteger large_number = new BigInteger("123456789123456789123456789");
             BigInteger medium_number = new BigInteger("123456789123456789");
             BigInteger small_number = new BigInteger("123456789");
@@ -109,7 +108,6 @@ public class krypton {
     // Decryption process/method
     public static void decrypt(){
         // Numbers to be used in the math process.
-        BigInteger very_large_number = new BigInteger("123456789123456789123456789123456789");
         BigInteger large_number = new BigInteger("123456789123456789123456789");
         BigInteger medium_number = new BigInteger("123456789123456789");
         BigInteger small_number = new BigInteger("123456789");
