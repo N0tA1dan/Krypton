@@ -7,8 +7,8 @@ Welcome to Krypton, A free open source encrypting software.
 
 Krypton is a free and open source symmetrical encryption program.
 
-Usually encryption is hard to understand for some begginers when approaching this topic. Krypton is here to Help. 
-Krypton is easy, short, and understandable for most begginer software developers. 
+Usually encryption is hard to understand for some beginners when approaching this topic. Krypton is here to Help. 
+Krypton is easy, short, and understandable for most beginners software developers. 
 
 Krypton can generate a key from 40-43 bytes and is virtually stronger than aes-256 discarding exploits in the program
 
