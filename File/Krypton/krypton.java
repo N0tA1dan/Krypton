@@ -1,7 +1,7 @@
 import java.math.BigInteger;
+import java.security.SecureRandom;
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.Random;
 
 public class krypton {
     public static void main(String args[]) {
@@ -44,8 +44,8 @@ public class krypton {
 
             // Making the key
             // Generates random number thats 6 digits long
-            Random rnd = new Random();
-            int key_random = 10000000 + rnd.nextInt(100000000 - 10000000);
+            SecureRandom rand = new SecureRandom();
+            int key_random = rand.nextInt(100000000);
 
             // Turns key into BigInteger so we can handle it easier
             BigInteger key = new BigInteger("" + key_random);
