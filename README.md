@@ -1,4 +1,4 @@
-### CRACKME.txt
+## CRACKME.txt
 
 CRACKME.txt is a file containing a encrypted string from the Krypton encryption algorithm.
 
