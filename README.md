@@ -1,13 +1,21 @@
-## CRACKME.txt
+## CAN YOU CRACK THIS ENCRYPTED TEXT?
 
-CRACKME.txt is a file containing a encrypted string from the Krypton encryption algorithm.
+CRACKME.txt contains a string encrypted by the Krypton algorithm. you can file (here)['https://github.com/N0tA1dan/Krypton/edit/CRACKME/CRACKME.txt']
 
-This is a bug bounty designed for people to try and crack Kryptons algorithm and extract the string from the encrypted text.
+this will be a $100 bug bounty for this cipher. THERE ARE NO LIMITS. 
 
-There are no limits on what you use to crack it.
+first one to submit the cracked cipher will earn 100$.
 
-from 06/13/2021 to 07/13/2021 we will pay $100 to whoever cracks it.
+this will last from 06/13/2021 - 07/13/2021.
+exclusions: 
+submitting a duplicate of someone else's find will not get you paid. 
+Submitting text you encrypt with krypton or any other encryption or hash method and decrypting it does not count. 
+putting the word crack, hack, cracked, cracked cipher in the cipher and sending it in does not count.
 
-After the dead line you can still attempt to crack Krypton but we will no longer offer the money.
+Submission:
+to submit the decypted text just email me at: notaidan420@gmail.com
+make sure to provide your name. how you decrypted it, and the final decrypted string.
 
-Sincerely, NotAidan.
+Rules: 
+the only thing that counts is obtaining the text behind the cipher I've supplied and providing the proof of concept on how you did so. 
+Good luck :)
