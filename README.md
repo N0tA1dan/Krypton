@@ -1,6 +1,7 @@
 ## CAN YOU CRACK THIS ENCRYPTED TEXT?
 
 CRACKME.txt contains a string encrypted by the Krypton algorithm. you can file [here](https://github.com/N0tA1dan/Krypton/edit/CRACKME/CRACKME.txt)
+or navigate to CRACKME/CRACKME.txt in this repository.
 
 this will be a $100 bug bounty for this cipher. THERE ARE NO LIMITS. 
 
