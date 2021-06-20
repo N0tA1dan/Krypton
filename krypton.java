@@ -51,16 +51,16 @@ public class krypton {
             int key_length = key_limit.bitLength();
             BigInteger key_1 = new BigInteger(key_length, random);
 
-            // Different keys.
-            BigInteger key_2 = key_1.divide(small_number);
-
-            // Reverses key_2
-            String key_2_string = key_2.toString();
-            StringBuilder stringbuilder = new StringBuilder(key_2_string);
+            // Reverses key_1
+            String key_1_string = key_1.toString();
+            StringBuilder stringbuilder = new StringBuilder(key_1_string);
             stringbuilder.reverse();
-            String key_2_reversed = stringbuilder.toString();
+            String key_1_reversed = stringbuilder.toString();
 
-            BigInteger key_3 = new BigInteger(key_2_reversed);
+            BigInteger key_reversed = new BigInteger(key_1_reversed);
+
+            BigInteger key_2 = key_reversed.multiply(small_number);
+            BigInteger key_3 = key_2.divide(small_number);
             BigInteger key_4 = key_3.divide(small_number);
 
             // Reverses key_4
@@ -75,7 +75,7 @@ public class krypton {
             // --------- ENCRYPTION PROCESS ----------
             BigInteger cipher_1 = new BigInteger(ascii_5);
             BigInteger cipher_2 = cipher_1.multiply(key_1);
-            BigInteger cipher_3 = cipher_2.multiply(key_2);
+            BigInteger cipher_3 = cipher_2.multiply(key_reversed);
             BigInteger cipher_4 = cipher_3.divide(medium_number);
             BigInteger cipher_5 = cipher_4.multiply(key_3);
             BigInteger cipher_6 = cipher_5.divide(small_number);
@@ -83,7 +83,7 @@ public class krypton {
             BigInteger cipher_8 = cipher_7.divide(key_5);
             BigInteger cipher_9 = cipher_8.multiply(large_number);
             BigInteger cipher_10 = cipher_9.divide(key_5);
-            BigInteger cipher_11 = cipher_10.multiply(key_3);
+            BigInteger cipher_11 = cipher_10.multiply(key_reversed);
             BigInteger cipher_12 = cipher_11.multiply(key_5);
             BigInteger cipher_13 = cipher_12.divide(medium_number);
             BigInteger cipher_14 = cipher_13.multiply(key_3);
@@ -113,16 +113,16 @@ public class krypton {
 
         BigInteger key_1 = new BigInteger(key_input.nextLine());
 
-        // Different keys.
-        BigInteger key_2 = key_1.divide(small_number);
-
-        // Reverses key_2
-        String key_2_string = key_2.toString();
-        StringBuilder stringbuilder = new StringBuilder(key_2_string);
+        // Reverses key_1
+        String key_1_string = key_1.toString();
+        StringBuilder stringbuilder = new StringBuilder(key_1_string);
         stringbuilder.reverse();
-        String key_2_reversed = stringbuilder.toString();
+        String key_1_reversed = stringbuilder.toString();
 
-        BigInteger key_3 = new BigInteger(key_2_reversed);
+        BigInteger key_reversed = new BigInteger(key_1_reversed);
+
+        BigInteger key_2 = key_reversed.multiply(small_number);
+        BigInteger key_3 = key_2.divide(small_number);
         BigInteger key_4 = key_3.divide(small_number);
 
         // Reverses key_4
@@ -142,7 +142,7 @@ public class krypton {
         BigInteger cipher_14 = cipher.divide(key_3);
         BigInteger cipher_13 = cipher_14.multiply(medium_number);
         BigInteger cipher_12 = cipher_13.divide(key_5);
-        BigInteger cipher_11 = cipher_12.divide(key_3);
+        BigInteger cipher_11 = cipher_12.divide(key_reversed);
         BigInteger cipher_10 = cipher_11.multiply(key_5);
         BigInteger cipher_9 = cipher_10.divide(large_number);
         BigInteger cipher_8 = cipher_9.multiply(key_5);
@@ -150,7 +150,7 @@ public class krypton {
         BigInteger cipher_6 = cipher_7.multiply(small_number);
         BigInteger cipher_5 = cipher_6.divide(key_3);
         BigInteger cipher_4 = cipher_5.multiply(medium_number);
-        BigInteger cipher_3 = cipher_4.divide(key_2);
+        BigInteger cipher_3 = cipher_4.divide(key_reversed);
         BigInteger cipher_2 = cipher_3.divide(key_1);
         BigInteger cipher_add = cipher_2.add(new BigInteger("1"));
 
