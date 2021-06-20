@@ -1,10 +1,17 @@
 import java.math.BigInteger;
-import java.security.SecureRandom;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.security.SecureRandom;
 
 public class krypton {
-    public static void main(String args[]) {
+
+    // ---------- NUMBERS TO PROCESS ENCRYPTION/DECRYPTION ---------
+    public static BigInteger small_number = new BigInteger("123456789");
+    public static BigInteger medium_number = new BigInteger("123456789123456789");
+    public static BigInteger large_number = new BigInteger("123456789123456789123456789");
+
+
+    public static void main(String[] args){
         Scanner start_input = new Scanner(System.in, "US-ASCII");
         System.out.print("What would you like to do (encrypt/decrypt): ");
 
@@ -18,17 +25,17 @@ public class krypton {
         }
     }
 
-    // Encryption process/method
+    // Encryption Process
     public static void encrypt(){
-        Scanner user_encrypt = new Scanner(System.in);
-        System.out.println("-------------------------------------------------------------------");
-        System.out.print("What would you like to encrypt: ");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("What would you like to encrypt?: ");
 
-        String user_encrypt_read = user_encrypt.nextLine();
+        String user_cipher = scanner.nextLine();
 
         try {
+
             // gets the byte encoding of the users input in ascii.
-            byte[] ascii_encode = user_encrypt_read.getBytes("US-ASCII");
+            byte[] ascii_encode = user_cipher.getBytes("US-ASCII");
             String ascii = Arrays.toString(ascii_encode);
 
             // filters out the unnecessary symbols and spaces in our string.
@@ -37,170 +44,140 @@ public class krypton {
             String ascii_4 = ascii_3.replace(" ", "");
             String ascii_5 = ascii_4.replace(",", "");
 
-            // Numbers to use in the key process and the encryption process
-            BigInteger large_number = new BigInteger("123456789123456789123456789");
-            BigInteger medium_number = new BigInteger("123456789123456789");
-            BigInteger small_number = new BigInteger("123456789");
 
-            // Making the key
-            // Generates random number thats 6 digits long
-            SecureRandom rand = new SecureRandom();
-            int key_random = rand.nextInt(100000000);
+            // ---------- Key generation ----------
+            SecureRandom random = new SecureRandom();
+            BigInteger key_limit = new BigInteger("10000000000000000000000000000000000000000");
+            int key_length = key_limit.bitLength();
+            BigInteger key_1 = new BigInteger(key_length, random);
 
-            // Turns key into BigInteger so we can handle it easier
-            BigInteger key = new BigInteger("" + key_random);
-            BigInteger key_1 = key.multiply(medium_number);
-            BigInteger key_2 = key_1.multiply(small_number);
-            String key_to_string = key_2.toString();
+            // Reverses key_1
+            String key_1_string = key_1.toString();
+            StringBuilder stringbuilder = new StringBuilder(key_1_string);
+            stringbuilder.reverse();
+            String key_1_reversed = stringbuilder.toString();
 
+            BigInteger key_reversed = new BigInteger(key_1_reversed);
 
-            // Reverses the key.
-            StringBuilder key_reverse = new StringBuilder(key_to_string);
-            key_reverse.reverse();
-            // Turns reversed key into big integer
-            String key_reversed = key_reverse.toString();
-            BigInteger key_3 = new BigInteger(key_reversed);
+            BigInteger key_2 = key_reversed.multiply(small_number);
+            BigInteger key_3 = key_2.divide(small_number);
+            BigInteger key_4 = key_3.divide(small_number);
 
+            // Reverses key_4
+            String key_4_string = key_4.toString();
+            StringBuilder stringbuilder_2 = new StringBuilder(key_4_string);
+            stringbuilder.reverse();
+            String key_4_reversed = stringbuilder_2.toString();
 
-            // Key 4
-            BigInteger key_4 = key_3.multiply(small_number);
-            String key_4_to_string = key_4.toString();
-
-            // Reverses key 4 to key
-            StringBuilder key_reverse_key_4 = new StringBuilder(key_4_to_string);
-            key_reverse_key_4.reverse() ;
-            // Turns reversed key into big integer
-            String key_reversed_key_4 = key_reverse_key_4.toString();
-            BigInteger key_5 = new BigInteger(key_reversed_key_4);
+            BigInteger key_5 = new BigInteger(key_4_reversed);
 
 
-            // converts string to biginteger then uses math to encrypt it.
+            // --------- ENCRYPTION PROCESS ----------
             BigInteger cipher_1 = new BigInteger(ascii_5);
             BigInteger cipher_2 = cipher_1.multiply(key_1);
-            BigInteger cipher_3 = cipher_2.multiply(small_number);
+            BigInteger cipher_3 = cipher_2.multiply(key_reversed);
             BigInteger cipher_4 = cipher_3.divide(medium_number);
-            BigInteger cipher_5 = cipher_4.multiply(key_2);
-            BigInteger cipher_6 = cipher_5.subtract(medium_number);
-            BigInteger cipher_7 = cipher_6.multiply(key_3);
-            BigInteger cipher_8 = cipher_7.multiply(large_number);
-            BigInteger cipher_9 = cipher_8.multiply(key_4);
-            BigInteger cipher_10 = cipher_9.divide(small_number);
-            BigInteger cipher_11 = cipher_10.multiply(key_5);
-            BigInteger cipher_12 = cipher_11.divide(large_number);
+            BigInteger cipher_5 = cipher_4.multiply(key_3);
+            BigInteger cipher_6 = cipher_5.divide(small_number);
+            BigInteger cipher_7 = cipher_6.multiply(key_4);
+            BigInteger cipher_8 = cipher_7.divide(key_5);
+            BigInteger cipher_9 = cipher_8.multiply(large_number);
+            BigInteger cipher_10 = cipher_9.divide(key_5);
+            BigInteger cipher_11 = cipher_10.multiply(key_reversed);
+            BigInteger cipher_12 = cipher_11.multiply(key_5);
             BigInteger cipher_13 = cipher_12.divide(medium_number);
-            BigInteger cipher_14 = cipher_13.multiply(small_number);
-            BigInteger cipher_15 = cipher_14.divide(key_4);
+            BigInteger cipher_14 = cipher_13.divide(key_reversed);
 
-            System.out.println("-------------------------------------------------------------------");
+            // ---------- PRINTING RESULTS ---------
+            System.out.println("--------------------------------------------");
             System.out.print("Your key is: ");
-            System.out.println(key_5);
-            System.out.println("-------------------------------------------------------------------");
-            System.out.println("Your encrypted text is below...");
+            System.out.println(key_1);
+            System.out.println("--------------------------------------------");
+            System.out.println("Your encrypted text is below");
             System.out.println();
-            System.out.println(cipher_15);
+            System.out.println(cipher_14);
 
         }
-        catch (Exception error) {
-            System.out.print("Error. Invalid input or error encrypting text.");
+
+        catch(Exception Unknown_Error){
+            System.out.println("Error. The program has experience a unsuspected error. Please try again later.");
         }
     }
 
-    // Decryption process/method
-    public static void decrypt(){
-        // Numbers to be used in the math process.
-        BigInteger large_number = new BigInteger("123456789123456789123456789");
-        BigInteger medium_number = new BigInteger("123456789123456789");
-        BigInteger small_number = new BigInteger("123456789");
+    // ---------- DECRYPTION PROCESS ---------
+    public static void decrypt() {
 
-        try {
-            // Takes users key and encrypted text as input.
-            Scanner user_key_input = new Scanner(System.in);
-            System.out.println("-------------------------------------------------------------------");
-            System.out.print("Please enter in your key (case sensitive): ");
+        // --------- KEYS ----------
+        Scanner key_input = new Scanner(System.in);
+        System.out.print("Please enter your key: ");
 
-            String user_key_input_read = user_key_input.nextLine();
+        BigInteger key_1 = new BigInteger(key_input.nextLine());
 
-            Scanner user_encrypted_text = new Scanner(System.in);
-            System.out.print("Please enter in your encrypted text (case sensitive): ");
+        // Reverses key_1
+        String key_1_string = key_1.toString();
+        StringBuilder stringbuilder = new StringBuilder(key_1_string);
+        stringbuilder.reverse();
+        String key_1_reversed = stringbuilder.toString();
 
-            String user_encrypted_text_read = user_encrypted_text.nextLine();
+        BigInteger key_reversed = new BigInteger(key_1_reversed);
 
-            // Converts users key into a big integer
-            BigInteger key = new BigInteger(user_key_input_read);
+        BigInteger key_2 = key_reversed.multiply(small_number);
+        BigInteger key_3 = key_2.divide(small_number);
+        BigInteger key_4 = key_3.divide(small_number);
 
-            // Reverses key 4 to key
-            String key_to_string = key.toString();
-            StringBuilder key_reverse_key = new StringBuilder(key_to_string);
-            key_reverse_key.reverse();
-            // Turns reversed key into big integer
-            String key_reversed_key = key_reverse_key.toString();
-            BigInteger key_5 = new BigInteger(key_reversed_key);
+        // Reverses key_4
+        String key_4_string = key_4.toString();
+        StringBuilder stringbuilder_2 = new StringBuilder(key_4_string);
+        stringbuilder.reverse();
+        String key_4_reversed = stringbuilder_2.toString();
 
-            // key 4
-            BigInteger key_4 = key_5.divide(small_number);
+        BigInteger key_5 = new BigInteger(key_4_reversed);
 
-            //reverses key
-            String key_4_to_string = key_4.toString();
-            StringBuilder key_4_reverse = new StringBuilder(key_4_to_string);
-            key_4_reverse.reverse();
 
-            // Turns reversed key into big integer
-            String key_4_reversed = key_4_reverse.toString();
-            BigInteger key_3 = new BigInteger(key_4_reversed);
+        // ---------- GETTING USERS CIPHER -----------
+        Scanner cipher_input = new Scanner(System.in);
+        System.out.print("Please enter your encrypted text: ");
+        BigInteger cipher = new BigInteger(cipher_input.nextLine());
+        // ---------- DECRYPTING THE CIPHERS ----------
+        BigInteger cipher_14 = cipher.multiply(key_reversed);
+        BigInteger cipher_13 = cipher_14.multiply(medium_number);
+        BigInteger cipher_12 = cipher_13.divide(key_5);
+        BigInteger cipher_11 = cipher_12.divide(key_reversed);
+        BigInteger cipher_10 = cipher_11.multiply(key_5);
+        BigInteger cipher_9 = cipher_10.divide(large_number);
+        BigInteger cipher_8 = cipher_9.multiply(key_5);
+        BigInteger cipher_7 = cipher_8.divide(key_4);
+        BigInteger cipher_6 = cipher_7.multiply(small_number);
+        BigInteger cipher_5 = cipher_6.divide(key_3);
+        BigInteger cipher_4 = cipher_5.multiply(medium_number);
+        BigInteger cipher_3 = cipher_4.divide(key_reversed);
+        BigInteger cipher_2 = cipher_3.divide(key_1);
+        // I have to add one because the program when decrypting subtracts one which leaves the ascii 1 integer off
+        BigInteger cipher_add = cipher_2.add(new BigInteger("1"));
 
-            // Decrypting process of users key
-            BigInteger key_2 = key_3.divide(small_number);
-            BigInteger key_1 = key_2.divide(medium_number);
+        System.out.println("Your decrypted text is below");
 
-            // Converts users encrypted text to a BigInteger.
-            BigInteger cipher = new BigInteger(user_encrypted_text_read);
+        String cipher_1 = cipher_add.toString();
+        int len = cipher_1.length();
 
-            // Decrypts users encrypted text.
-            BigInteger cipher_15 = cipher.multiply(key_5);
-            BigInteger cipher_14 = cipher_15.divide(small_number);
-            BigInteger cipher_13 = cipher_14.multiply(medium_number);
-            BigInteger cipher_12 = cipher_13.multiply(large_number);
-            BigInteger cipher_11 = cipher_12.divide(key);
-            BigInteger cipher_10 = cipher_11.multiply(small_number);
-            BigInteger cipher_9 = cipher_10.divide(key_5);
-            BigInteger cipher_8 = cipher_9.divide(large_number);
-            BigInteger cipher_7 = cipher_8.divide(key_4);
-            BigInteger cipher_6 = cipher_7.add(medium_number);
-            BigInteger cipher_5 = cipher_6.divide(key_3);
-            BigInteger cipher_4 = cipher_5.multiply(medium_number);
-            BigInteger cipher_3 = cipher_4.divide(small_number);
-            BigInteger cipher_2 = cipher_3.divide(key_2);
+        int num = 0;
+        for (int i = 0; i < len; i++) {
 
-            System.out.println();
-            System.out.println("Your decrypted text is below...");
-            System.out.println("-------------------------------------------------------------------");
+            // Append the current digit
+            // note: this line takes a number from our string for example 9 then multiplies by 10 which is 90. then we add the next number in our string(str) for example 7. Finally we subract '0' to convert the character into a integer. finally we are left with "97" which is the character "a" in ascii.
+            num = num * 10 + (cipher_1.charAt(i) - '0');
 
-            String cipher_1 = cipher_2.toString();
-            int len = cipher_1.length();
+            // If num is within the required range
+            if (num >= 32 && num <= 255) {
 
-            int num = 0;
-            for (int i = 0; i < len; i++) {
+                // Convert num to char
+                char ch = (char) num;
+                System.out.print(ch);
 
-                // Append the current digit
-                // note: this line takes a number from our string for example 9 then multiplies by 10 which is 90. then we add the next number in our string(str) for example 7. Finally we subract '0' to convert the character into a integer. finally we are left with "97" which is the character "a" in ascii.
-                num = num * 10 + (cipher_1.charAt(i) - '0');
-
-                // If num is within the required range
-                if (num >= 32 && num <= 255) {
-
-                    // Convert num to char
-                    char ch = (char) num;
-                    System.out.print(ch);
-
-                    // Reset num to 0
-                    num = 0;
-                }
+                // Reset num to 0
+                num = 0;
             }
-            System.out.println();
         }
-        catch(Exception CaseSensitve) {
-            System.out.println();
-            System.out.println("Error. Input was invalid or contained unsupported characters.");
-        }
+        System.out.println();
     }
 }
