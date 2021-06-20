@@ -82,8 +82,11 @@ public class krypton {
             BigInteger cipher_7 = cipher_6.multiply(key_4);
             BigInteger cipher_8 = cipher_7.divide(key_5);
             BigInteger cipher_9 = cipher_8.multiply(large_number);
-            BigInteger cipher_10 = cipher_9.divide(key_1);
-            BigInteger cipher_11 = cipher_10.multiply(small_number);
+            BigInteger cipher_10 = cipher_9.divide(key_5);
+            BigInteger cipher_11 = cipher_10.multiply(key_3);
+            BigInteger cipher_12 = cipher_11.multiply(key_5);
+            BigInteger cipher_13 = cipher_12.divide(medium_number);
+            BigInteger cipher_14 = cipher_13.multiply(key_3);
 
             // ---------- PRINTING RESULTS ---------
             System.out.println("--------------------------------------------");
@@ -92,7 +95,7 @@ public class krypton {
             System.out.println("--------------------------------------------");
             System.out.println("Your encrypted text is below");
             System.out.println();
-            System.out.println(cipher_11);
+            System.out.println(cipher_14);
 
         }
 
@@ -136,8 +139,11 @@ public class krypton {
         System.out.print("Please enter your encrypted text: ");
         BigInteger cipher = new BigInteger(cipher_input.nextLine());
         // ---------- DECRYPTING THE CIPHERS ----------
-        BigInteger cipher_11 = cipher.divide(small_number);
-        BigInteger cipher_10 = cipher_11.multiply(key_1);
+        BigInteger cipher_14 = cipher.divide(key_3);
+        BigInteger cipher_13 = cipher_14.multiply(medium_number);
+        BigInteger cipher_12 = cipher_13.divide(key_5);
+        BigInteger cipher_11 = cipher_12.divide(key_3);
+        BigInteger cipher_10 = cipher_11.multiply(key_5);
         BigInteger cipher_9 = cipher_10.divide(large_number);
         BigInteger cipher_8 = cipher_9.multiply(key_5);
         BigInteger cipher_7 = cipher_8.divide(key_4);
@@ -146,10 +152,11 @@ public class krypton {
         BigInteger cipher_4 = cipher_5.multiply(medium_number);
         BigInteger cipher_3 = cipher_4.divide(key_2);
         BigInteger cipher_2 = cipher_3.divide(key_1);
+        BigInteger cipher_add = cipher_2.add(new BigInteger("1"));
 
         System.out.println("Your decrypted text is below");
 
-        String cipher_1 = cipher_2.toString();
+        String cipher_1 = cipher_add.toString();
         int len = cipher_1.length();
 
         int num = 0;
@@ -173,3 +180,4 @@ public class krypton {
         System.out.println();
     }
 }
+
