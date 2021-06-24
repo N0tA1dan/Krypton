@@ -34,7 +34,7 @@ To run Krypton navigate to its folder. Once inside the Krypton directory navigat
 
 # Repl.it project
 
-we have a Repl.it version of krypton so you can run it without java installed on your computer. All you have to do is follow the link below and click the play button.
+We have a Repl.it version of krypton so you can run it without java installed on your computer. All you have to do is follow the link below and click the play button.
 
 https://replit.com/@N0tA1dan/Krypton#Main.java
 
