@@ -67,12 +67,6 @@ If you would like to support me you can [buy me a coffee.](https://www.buymeacof
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/notaidan)
 
 
-# Website
-
-If you would like to check out the Krypton website it will be below
-
-https://n0ta1dan.github.io/Krypton/
-
 # Extras
 
 If you would like to support my community please join my discord below.
