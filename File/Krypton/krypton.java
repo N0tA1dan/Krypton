@@ -1,5 +1,4 @@
 import java.math.BigInteger;
-import java.util.Arrays;
 import java.util.Scanner;
 import java.security.SecureRandom;
 import java.nio.charset.StandardCharsets;
@@ -154,10 +153,13 @@ public class krypton {
         BigInteger cipher_add = cipher_2.add(new BigInteger("1"));
 
         System.out.println("Your decrypted text is below");
-
+        
+        // converts the bigintegers back into hexadecimal using a radix of 16
         String cipher_1 = cipher_add.toString(16);
 
+        // converts the hexadecimal string into a byte array
         byte[] hex_string_byte_array = new BigInteger(cipher_1, 16).toByteArray();
+        // converts the byte array back into utf-8 encoded chars
         String hex_to_utf_8 = new String(hex_string_byte_array, StandardCharsets.UTF_8);
 
         System.out.println(hex_to_utf_8);
