@@ -1,7 +1,7 @@
 ![Screenshot](/logo/Krypton.jpg)
 # Krypton
 
-Welcome to Krypton, A free open source encrypting software.
+Welcome to Krypton, A free open source encryption software.
 
 # Description
 
