@@ -2,6 +2,7 @@ import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.security.SecureRandom;
+import java.nio.charset.StandardCharsets;
 
 public class krypton {
 
@@ -34,15 +35,9 @@ public class krypton {
 
         try {
 
-            // gets the byte encoding of the users input in ascii.
-            byte[] ascii_encode = user_cipher.getBytes("US-ASCII");
-            String ascii = Arrays.toString(ascii_encode);
+            // gets the byte encoding of the users input in utf-8.
+            byte[] utf_8_encode = user_cipher.getBytes(StandardCharsets.UTF_8);
 
-            // filters out the unnecessary symbols and spaces in our string.
-            String ascii_2 = ascii.replace("[", "");
-            String ascii_3 = ascii_2.replace("]", "");
-            String ascii_4 = ascii_3.replace(" ", "");
-            String ascii_5 = ascii_4.replace(",", "");
 
 
             // ---------- Key generation ----------
@@ -73,7 +68,9 @@ public class krypton {
 
 
             // --------- ENCRYPTION PROCESS ----------
-            BigInteger cipher_1 = new BigInteger(ascii_5);
+            // turns users input from utf-8 encoding into hexadecimal then into a biginteger
+            BigInteger cipher_1 = new BigInteger(utf_8_encode);
+            // math adding onto the hexadecimal numbers
             BigInteger cipher_2 = cipher_1.multiply(key_1);
             BigInteger cipher_3 = cipher_2.multiply(key_reversed);
             BigInteger cipher_4 = cipher_3.divide(medium_number);
@@ -87,6 +84,7 @@ public class krypton {
             BigInteger cipher_12 = cipher_11.multiply(key_5);
             BigInteger cipher_13 = cipher_12.divide(medium_number);
             BigInteger cipher_14 = cipher_13.divide(key_reversed);
+
 
             // ---------- PRINTING RESULTS ---------
             System.out.println("--------------------------------------------");
@@ -157,27 +155,11 @@ public class krypton {
 
         System.out.println("Your decrypted text is below");
 
-        String cipher_1 = cipher_add.toString();
-        int len = cipher_1.length();
+        String cipher_1 = cipher_add.toString(16);
 
-        int num = 0;
-        for (int i = 0; i < len; i++) {
+        byte[] hex_string_byte_array = new BigInteger(cipher_1, 16).toByteArray();
+        String hex_to_utf_8 = new String(hex_string_byte_array, StandardCharsets.UTF_8);
 
-            // Append the current digit
-            // note: this line takes a number from our string for example 9 then multiplies by 10 which is 90. then we add the next number in our string(str) for example 7. Finally we subract '0' to convert the character into a integer. finally we are left with "97" which is the character "a" in ascii.
-            num = num * 10 + (cipher_1.charAt(i) - '0');
-
-            // If num is within the required range
-            if (num >= 32 && num <= 255) {
-
-                // Convert num to char
-                char ch = (char) num;
-                System.out.print(ch);
-
-                // Reset num to 0
-                num = 0;
-            }
-        }
-        System.out.println();
+        System.out.println(hex_to_utf_8);
     }
 }
