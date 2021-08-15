@@ -5,12 +5,6 @@ import java.nio.charset.StandardCharsets;
 
 public class krypton {
 
-    // ---------- NUMBERS TO PROCESS ENCRYPTION/DECRYPTION ---------
-    public static BigInteger small_number = new BigInteger("123456789");
-    public static BigInteger medium_number = new BigInteger("123456789123456789");
-    public static BigInteger large_number = new BigInteger("123456789123456789123456789");
-
-
     public static void main(String[] args){
         Scanner start_input = new Scanner(System.in, "US-ASCII");
         System.out.print("What would you like to do (encrypt/decrypt): ");
