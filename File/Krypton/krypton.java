@@ -51,38 +51,26 @@ public class krypton {
             stringbuilder.reverse();
             String key_1_reversed = stringbuilder.toString();
 
-            BigInteger key_reversed = new BigInteger(key_1_reversed);
-
-            BigInteger key_2 = key_reversed.multiply(small_number);
-            BigInteger key_3 = key_2.divide(small_number);
-            BigInteger key_4 = key_3.divide(small_number);
-
-            // Reverses key_4
-            String key_4_string = key_4.toString();
-            StringBuilder stringbuilder_2 = new StringBuilder(key_4_string);
-            stringbuilder.reverse();
-            String key_4_reversed = stringbuilder_2.toString();
-
-            BigInteger key_5 = new BigInteger(key_4_reversed);
-
+            BigInteger key_2 = new BigInteger(key_1_reversed);
 
             // --------- ENCRYPTION PROCESS ----------
             // turns users input from utf-8 encoding into hexadecimal then into a biginteger
             BigInteger cipher_1 = new BigInteger(utf_8_encode);
             // math adding onto the hexadecimal numbers
             BigInteger cipher_2 = cipher_1.multiply(key_1);
-            BigInteger cipher_3 = cipher_2.multiply(key_reversed);
-            BigInteger cipher_4 = cipher_3.divide(medium_number);
-            BigInteger cipher_5 = cipher_4.multiply(key_3);
-            BigInteger cipher_6 = cipher_5.divide(small_number);
-            BigInteger cipher_7 = cipher_6.multiply(key_4);
-            BigInteger cipher_8 = cipher_7.divide(key_5);
-            BigInteger cipher_9 = cipher_8.multiply(large_number);
-            BigInteger cipher_10 = cipher_9.divide(key_5);
-            BigInteger cipher_11 = cipher_10.multiply(key_reversed);
-            BigInteger cipher_12 = cipher_11.multiply(key_5);
-            BigInteger cipher_13 = cipher_12.divide(medium_number);
-            BigInteger cipher_14 = cipher_13.divide(key_reversed);
+            BigInteger cipher_3 = cipher_2.multiply(key_2);
+
+            // reverses user cipher
+            String cipher_3_to_string = cipher_3.toString();
+            StringBuilder stringbuilder_2 = new StringBuilder(cipher_3_to_string);
+            stringbuilder_2.reverse();
+            String cipher_4_string = stringbuilder_2.toString();
+
+            // reversed user cipher
+            BigInteger cipher_4 = new BigInteger(cipher_4_string);
+
+            BigInteger cipher_5 = cipher_4.multiply(key_1);
+
 
 
             // ---------- PRINTING RESULTS ---------
@@ -92,7 +80,7 @@ public class krypton {
             System.out.println("--------------------------------------------");
             System.out.println("Your encrypted text is below");
             System.out.println();
-            System.out.println(cipher_14);
+            System.out.println(cipher_5);
 
         }
 
@@ -116,52 +104,41 @@ public class krypton {
         stringbuilder.reverse();
         String key_1_reversed = stringbuilder.toString();
 
-        BigInteger key_reversed = new BigInteger(key_1_reversed);
+        BigInteger key_2 = new BigInteger(key_1_reversed);
 
-        BigInteger key_2 = key_reversed.multiply(small_number);
-        BigInteger key_3 = key_2.divide(small_number);
-        BigInteger key_4 = key_3.divide(small_number);
-
-        // Reverses key_4
-        String key_4_string = key_4.toString();
-        StringBuilder stringbuilder_2 = new StringBuilder(key_4_string);
-        stringbuilder.reverse();
-        String key_4_reversed = stringbuilder_2.toString();
-
-        BigInteger key_5 = new BigInteger(key_4_reversed);
 
 
         // ---------- GETTING USERS CIPHER -----------
         Scanner cipher_input = new Scanner(System.in);
         System.out.print("Please enter your encrypted text: ");
         BigInteger cipher = new BigInteger(cipher_input.nextLine());
-        // ---------- DECRYPTING THE CIPHERS ----------
-        BigInteger cipher_14 = cipher.multiply(key_reversed);
-        BigInteger cipher_13 = cipher_14.multiply(medium_number);
-        BigInteger cipher_12 = cipher_13.divide(key_5);
-        BigInteger cipher_11 = cipher_12.divide(key_reversed);
-        BigInteger cipher_10 = cipher_11.multiply(key_5);
-        BigInteger cipher_9 = cipher_10.divide(large_number);
-        BigInteger cipher_8 = cipher_9.multiply(key_5);
-        BigInteger cipher_7 = cipher_8.divide(key_4);
-        BigInteger cipher_6 = cipher_7.multiply(small_number);
-        BigInteger cipher_5 = cipher_6.divide(key_3);
-        BigInteger cipher_4 = cipher_5.multiply(medium_number);
-        BigInteger cipher_3 = cipher_4.divide(key_reversed);
-        BigInteger cipher_2 = cipher_3.divide(key_1);
-        // I have to add one because the program when decrypting subtracts one which leaves the ascii 1 integer off
-        BigInteger cipher_add = cipher_2.add(new BigInteger("1"));
 
-        System.out.println("Your decrypted text is below");
-        
+
+        // ---------- DECRYPTING THE CIPHERS ----------
+
+        BigInteger cipher_5 = cipher.divide(key_1);
+
+        String cipher_5_to_string = cipher_5.toString();
+        StringBuilder stringBuilder_2 = new StringBuilder(cipher_5_to_string);
+        stringBuilder_2.reverse();
+        String cipher_4_to_string = stringBuilder_2.toString();
+
+        BigInteger cipher_4 = new BigInteger(cipher_4_to_string);
+
+        BigInteger cipher_3 = cipher_4.divide(key_2);
+        BigInteger cipher_2 = cipher_3.divide(key_1);
+
+
         // converts the bigintegers back into hexadecimal using a radix of 16
-        String cipher_1 = cipher_add.toString(16);
+        String cipher_1 = cipher_2.toString(16);
 
         // converts the hexadecimal string into a byte array
         byte[] hex_string_byte_array = new BigInteger(cipher_1, 16).toByteArray();
         // converts the byte array back into utf-8 encoded chars
         String hex_to_utf_8 = new String(hex_string_byte_array, StandardCharsets.UTF_8);
 
+
+        System.out.println("Your decrypted text is below");
         System.out.println(hex_to_utf_8);
     }
 }
