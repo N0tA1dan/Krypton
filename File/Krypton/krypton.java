@@ -6,7 +6,7 @@ import java.nio.charset.StandardCharsets;
 public class krypton {
 
     public static void main(String[] args){
-        Scanner start_input = new Scanner(System.in, "US-ASCII");
+        Scanner start_input = new Scanner(System.in);
         System.out.print("What would you like to do (encrypt/decrypt): ");
 
         String start_input_read = start_input.nextLine();
