@@ -103,8 +103,8 @@ public class krypton_custom_key {
         System.out.print("Please enter your key: ");
 
         String key_to_string = key_input.nextLine();
-        byte[] utf_key_encoded = key_to_string.getBytes(StandardCharsets.UTF_8);
-        BigInteger key_1 = new BigInteger(utf_key_encoded);
+        byte[] key_encoded = key_to_string.getBytes(StandardCharsets.UTF_8);
+        BigInteger key_1 = new BigInteger(key_encoded);
 
 
         // Reverses key_1
