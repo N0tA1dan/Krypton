@@ -1,8 +1,7 @@
-// To change the encoding of the encryption go to line 34, 43, 79, 106, and 147. do StandardCharsets.your_charset to set it to your liking
+// To change the encoding of the encryption go to line 33, 42, 78, 105, and 146. do StandardCharsets.your_charset to set it to your liking
 
 import java.math.BigInteger;
 import java.util.Scanner;
-import java.security.SecureRandom;
 import java.nio.charset.StandardCharsets;
 
 public class krypton_custom_key {
