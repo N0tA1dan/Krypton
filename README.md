@@ -61,8 +61,7 @@ https://replit.com/@N0tA1dan/Krypton#Main.java
 
 Q: What can Krypton encrypt?
 
-A: Krypton can only encrypt UTF-8 encoded characters. Anything else wont work.
-
+A: Krypton can encrypt Any encoded character you set it to. But if you leave it as default it can only encrypt UTF-8 characters.
 
 Q: What is symmetrical encryption?
 
