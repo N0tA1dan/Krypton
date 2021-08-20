@@ -18,8 +18,11 @@ Krypton is still being programmed as of 05/21/2021 and will have various release
 
 To install Krypton on windows simply download the code as a zip file. Then unzip the file and you should get a directory called Krypton.
 
-To run Krypton on windows make sure to install the latest version of java. Once inside the Krypton directory navigate to "/File/Krypton/". Then open a command prompt and type the command below.
+To run Krypton on windows make sure to install the latest version of java. Next open a command prompt/terminal and navigate where you have unzipped Krypton.
 
+> cd Krypton
+> cd File
+> cd Krypton
 > java krypton.java
 
 # Linux Installation
@@ -28,9 +31,22 @@ To install Krypton on linux use the command below in a terminal.
 
 > git clone https://github.com/N0tA1dan/Krypton/
 
-To run Krypton navigate to its folder. Once inside the Krypton directory navigate to "/File/Krypton/" and open a terminal there. Next type the following command below.
+To run Krypton open a command prompt/terminal and follow the commands below.
 
+> cd Krypton
+> cd File
+> cd Krypton
 > java krypton.java
+
+# Custom Key Version
+
+If you would like to use a custom key instead of a randomly generated one use the file "krypton_custom_key.java". The algorithm is the same but you can insert your own key for encryption. To run the file open a terminal/command line and enter the following commands.
+
+> git clone https://github.com/N0tA1dan/Krypton/
+> cd Krypton
+> cd File
+> cd Krypton
+> java krypton_custom_key.java
 
 # Repl.it project
 
