@@ -29,18 +29,19 @@ public class krypton_custom_key {
 
         try {
 
-            // encodes user input into said charset
+            // encodes user input into a byte array using said Encoding
             byte[] encode = user_cipher.getBytes(StandardCharsets.UTF_8);
 
 
 
-            // ---------- Key generation ----------
+            // -------------- Key Input --------------
             Scanner key_scanner = new Scanner(System.in);
             System.out.print("Please enter a 320-bit prefered sized key: ");
 
             String user_key = key_scanner.nextLine();
-            byte[] utf_key_encoded = user_key.getBytes(StandardCharsets.UTF_8);
-            BigInteger key_1 = new BigInteger(utf_key_encoded);
+            // Turns user key into a byte array using said Encoding.
+            byte[] key_encoded = user_key.getBytes(StandardCharsets.UTF_8);
+            BigInteger key_1 = new BigInteger(key_encoded);
 
 
             // Reverses key_1
