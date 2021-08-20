@@ -18,7 +18,7 @@ Krypton is still being programmed as of 05/21/2021 and will have various release
 
 To install Krypton on windows simply download the code as a zip file. Then unzip the file and you should get a directory called Krypton.
 
-To run Krypton on windows make sure to install the latest version of java. Next open a command prompt/terminal and navigate where you have unzipped Krypton.
+To run Krypton on windows make sure to install the latest version of java. Next open a command prompt/terminal and navigate where you have unzipped Krypton. Next follow the commands below.
 
 ```
 cd Krypton
