@@ -30,8 +30,8 @@ public class krypton_custom_key {
 
         try {
 
-            // gets the byte encoding of the users input in utf-8.
-            byte[] utf_8_encode = user_cipher.getBytes(StandardCharsets.UTF_8);
+            // encodes user input into said charset
+            byte[] encode = user_cipher.getBytes(StandardCharsets.UTF_8);
 
 
 
@@ -54,7 +54,7 @@ public class krypton_custom_key {
 
             // --------- ENCRYPTION PROCESS ----------
             // turns users input from its encoding into hexadecimal then into a biginteger
-            BigInteger cipher_1 = new BigInteger(utf_8_encode);
+            BigInteger cipher_1 = new BigInteger(encode);
             // math adding onto the hexadecimal numbers
             BigInteger cipher_2 = cipher_1.multiply(key_1);
             BigInteger cipher_3 = cipher_2.multiply(key_2);
@@ -144,10 +144,10 @@ public class krypton_custom_key {
         // converts the hexadecimal string into a byte array
         byte[] hex_string_byte_array = new BigInteger(cipher_1, 16).toByteArray();
         // converts the byte array back into its encoded chars
-        String hex_to_utf_8 = new String(hex_string_byte_array, StandardCharsets.UTF_8);
+        String hex_to_char = new String(hex_string_byte_array, StandardCharsets.UTF_8);
 
 
         System.out.println("Your decrypted text is below");
-        System.out.println(hex_to_utf_8);
+        System.out.println(hex_to_char);
     }
 }
