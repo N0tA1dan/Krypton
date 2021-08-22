@@ -12,6 +12,12 @@ Krypton is easy, short, and understandable for most beginners aproaching this.
 
 Krypton is still being programmed as of 05/21/2021 and will have various releases of it soon.
 
+# Implementation
+
+Krypton has a library and it will be in the link below:
+
+https://github.com/N0tA1dan/krypton_library
+
 # Windows Installation 
 
 To install Krypton on windows simply download the code as a zip file. Then unzip the file and you should get a directory called Krypton.
